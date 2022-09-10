@@ -1,0 +1,15 @@
+name: Build code
+on:
+  push:
+    paths-ignore:
+      - 'doc/**'
+      - '**/**.md'
+      - '**/**.png'
+      - '**/**.svg'
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: sudo scripts/ci.sh
