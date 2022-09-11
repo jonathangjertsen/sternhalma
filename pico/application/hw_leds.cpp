@@ -13,7 +13,7 @@ void leds_update()
 
 void leds_init(const ws2812::rgb_t *mem, size_t size)
 {
-    g_mem  = mem;
+    g_mem = mem;
     g_size = size;
 
     ws2812::start(NEOPIXEL_PIO_NO, NEOPIXEL_PIO_SM, NEOPIXEL_PIO_PIN);

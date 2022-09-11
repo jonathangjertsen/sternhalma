@@ -1,5 +1,9 @@
 #pragma once
 
+#define SLOTS_PER_SLICE 20
+#define N_SLICES 6
+#define TOTAL_SLOTS 121
+
 #define NEOPIXEL_PIO_NO    0
 #define NEOPIXEL_PIO_SM    0
 #define NEOPIXEL_PIO_PIN   2
