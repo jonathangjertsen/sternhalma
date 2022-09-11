@@ -4,6 +4,7 @@
 #include "ws2812.h"
 #include "mcp23017.h"
 #include "onboard_led.h"
+#include "hw_leds.h"
 
 #include "pico/stdlib.h"
 
@@ -23,17 +24,6 @@ static GameBoard<9> board{};
 static Mcp23017 mcps[] = {
     Mcp23017{BUTTON_MATRIX_I2C_PERIPH, BUTTON_MATRIX_I2C_ADDR_0},
 };
-
-void leds_update()
-{
-    ws2812::write(NEOPIXEL_PIO_NO, board.led_mem(), 9);
-}
-
-void leds_init()
-{
-    ws2812::start(NEOPIXEL_PIO_NO, NEOPIXEL_PIO_SM, NEOPIXEL_PIO_PIN);
-    leds_update();
-}
 
 void i2c_init_app(void)
 {
@@ -71,7 +61,7 @@ uint32_t keyscan(Mcp23017 &mcp, int columns, int rows, int interval_ms)
 
 int main(void)
 {
-    leds_init();
+    leds_init(board.led_mem(), board.size());
     i2c_init_app();
     for (const auto &mcp : mcps)
     {
