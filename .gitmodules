@@ -1,3 +1,12 @@
 [submodule "pico/vendor/pico-sdk"]
 	path = pico/vendor/pico-sdk
 	url = https://github.com/raspberrypi/pico-sdk.git
+[submodule "vendor\\pico-mcp23017"]
+	path = vendor\\pico-mcp23017
+	url = https://github.com/adamboardman/pico-mcp23017.git
+[submodule "pico\\vendor\\pico-mcp23017"]
+	path = pico\\vendor\\pico-mcp23017
+	url = https://github.com/adamboardman/pico-mcp23017.git
+[submodule "pico/vendor/pico-interfaces"]
+	path = pico/vendor/pico-interfaces
+	url = https://github.com/adamboardman/pico-interfaces.git
